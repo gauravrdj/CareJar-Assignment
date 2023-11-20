@@ -1,0 +1,227 @@
+<!-- views/doctors.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Details</title>
+    <!-- <link rel="stylesheet" href="/styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f2f1; /* Light blue background color */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doctor-card {
+            border: 1px solid #5bc0de; /* Matching border color */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            text-align: left; /* Align text to the left */
+            animation: fadeIn 0.5s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out; /* Hover animation */
+            background-color: #fff; /* White background color */
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05); /* Scale on hover */
+        }
+
+        .doctor-image {
+            width: 100px; /* Adjust the size of the circular image */
+            height: 100px;
+            border-radius: 50%; /* Make the image circular */
+            margin-right: 20px; /* Add margin to the right */
+        }
+
+        .doctor-details {
+            flex-grow: 1;
+        }
+
+        .doctor-name {
+            color: #007bff; /* Blue color for the doctor's name */
+            margin-bottom: 5px;
+        }
+
+        .specialization {
+            color: #555; /* Dark gray color for specialization */
+            margin-bottom: 5px;
+        }
+
+        .experience {
+            color: #333; /* Dark text color for experience */
+            margin-bottom: 5px;
+        }
+
+        .address {
+            color: #333; /* Dark text color for address */
+            margin-bottom: 5px;
+        }
+
+        .fee {
+            color: #333; /* Dark text color for fee */
+            margin-bottom: 5px;
+        }
+
+        .like-text {
+            color: #333; /* Dark text color for like percentage */
+        }
+
+        /* .appointment-button {
+            background-color: #4CAF50; 
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        } */
+
+        .appointment-button:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+
+        .date-picker {
+            width: 150px;
+            padding: 8px;
+            border: 1px solid #5bc0de;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .review-button {
+            background-color: #fff; /* White background for the button */
+            border: 1px solid #007bff; /* Blue border color */
+            color: #007bff; /* Blue text color */
+            padding: 8px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .like-icon {
+            margin-right: 5px;
+            font-size: 18px;
+        }
+
+        .review-button:hover {
+            background-color: #007bff; /* Darker blue color on hover */
+            color: #fff; /* White text color on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        header {
+    /* Add styles as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #007bff;
+}
+
+.logo {
+    /* Add styles for your logo */
+    max-height: 70px; /* Adjust the height as needed */
+}
+
+nav {
+    /* Add styles for your navigation links */
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Align navigation links vertically in the center */
+}
+
+nav a {
+    /* Add styles for each navigation link */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+.book-appointment-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .no-booking-fee {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <!-- Add your logo here -->
+        <img src="/images/carejarHome.png" alt="Logo" class="logo">
+
+        <!-- Navigation bar -->
+        <nav>
+            <a href="/home">Home</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+        </nav>
+    
+    <!-- Experience personalized care – book an in-clinic consultation now! -->
+</header>
+    <div class="container">
+        <% for(var i=0; i<doctors.length; i++) { %>
+            <div class="doctor-card" style="animation-delay: <%= i * 0.1 %>s;">
+                <img class="doctor-image" src="<%=doctors[i].doctorImage%>" alt="">
+                <div class="doctor-details">
+                    <h2 class="doctor-name"><%= doctors[i].Name %></h2>
+                    <h4 class="specialization">Dentist</h4>
+                    <p class="experience"> <strong><%= doctors[i].Experience %></strong></p>
+                    <p class="address"><%= doctors[i].Address %></p>
+                    <p class="fee"> Rs.<%= doctors[i].Fee %></p>
+                    <p class="like-text"><span class="like-icon">&#10084;</span><%=doctors[i].like %>%</p>
+                </div>
+                <div>
+                    <input type="date" class="date-picker">
+                    <!-- <a href="/success"><button class="appointment-button" onclick="bookAppointment('<%= doctors[i].Name %>')">Book Appointment</button></a> -->
+                    <a href="/success" class="book-appointment-button">
+                        Book Appointment
+                        <div class="no-booking-fee">No Booking Fee</div>
+                    </a>
+                    <div class="review-button">
+                        <span class="like-icon">&#10084;</span> <%=doctors[i].like %>% Like
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

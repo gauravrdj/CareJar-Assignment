@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Doctor Consultation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            font-size: 1.5em;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .field-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .field-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0;
+        }
+
+        .field-card img {
+            max-width: 100%;
+            max-height: 150px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .field-card:hover img {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .consultation-link {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.7em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        header {
+    /* Add styles as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #007bff;
+}
+
+.logo {
+    /* Add styles for your logo */
+    max-height: 70px; /* Adjust the height as needed */
+}
+
+nav {
+    /* Add styles for your navigation links */
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Align navigation links vertically in the center */
+}
+
+nav a {
+    /* Add styles for each navigation link */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        
+            <!-- Add your logo here -->
+            <img src="/images/carejarHome.png" alt="Logo" class="logo">
+    
+            <!-- Navigation bar -->
+            <nav>
+                <a href="/home">Home</a>
+                <a href="/">About</a>
+                <a href="/">Contact</a>
+            </nav>
+        
+        <!-- Experience personalized care – book an in-clinic consultation now! -->
+    </header>
+
+    <section class="container">
+        <div class="field-card">
+            <img src="/images/dent.jpg" alt="Dentist Image">
+            <h2>Dentist</h2>
+            <a class="consultation-link" href="/dentist"><button>Book Appointment</button></a>
+        </div>
+
+        <div class="field-card">
+            <img src="/images/gyne.png" alt="Gynecologist Image">
+            <h2>Gynecologist</h2>
+            <a class="consultation-link" href="/gynecologist"><button>Book Appointment</button></a>
+        </div>
+
+        <div class="field-card">
+            <img src="/images/pulmo.jpeg" alt="Pulmonologist Image">
+            <h2>Pulmonologist</h2>
+            <a class="consultation-link" href="/pulmonologist"><button>Book Appointment</button></a>
+        </div>
+
+        <!-- Add three more divs for different fields -->
+        <div class="field-card">
+            <img src="/images/cardio.jpeg" alt="Cardiologist Image">
+            <h2>Cardiologist</h2>
+            <a class="consultation-link" href="/cardiologist"><button>Book Appointment</button></a>
+        </div>
+
+        <div class="field-card">
+            <img src="/images/neuro.jpeg" alt="Neurologist Image">
+            <h2>Neurologist</h2>
+            <a class="consultation-link" href="/neurologist"><button>Book Appointment</button></a>
+        </div>
+
+        <div class="field-card">
+            <img src="/images/dera.jpg" alt="Dermatologist Image">
+            <h2>Dermatologist</h2>
+            <a class="consultation-link" href="/dermatologist"><button>Book Appointment</button></a>
+        </div>
+    </section>
+
+</body>
+</html>
