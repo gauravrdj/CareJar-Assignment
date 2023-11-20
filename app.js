@@ -75,7 +75,7 @@ app.get('/Dermatologist', (req,res)=>{
 res.render('dera', {doctors:doctors});
 });
 app.get('/success', (req,res)=>{
-res.render('success');
+res.render('Success');
 });
 
 app.listen(3000, ()=>{
